@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+**/node_modules/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+*.env.local
+
+# Uploads & Models (large files)
+backend/uploads/
+ml-service/models/*.h5
+ml-service/models/*.png
+
+# Build output
+dist/
+frontend/dist/
+frontend/build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

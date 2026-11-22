@@ -1,0 +1,42 @@
+{
+  "DenseNet121": {
+    "accuracy": 0.9837,
+    "precision_macro": 0.9812,
+    "recall_macro": 0.9825,
+    "f1_macro": 0.9818,
+    "training_time_sec": 2640.5,
+    "model_file_size_mb": 33.2
+  },
+  "ResNet50": {
+    "accuracy": 0.9715,
+    "precision_macro": 0.9680,
+    "recall_macro": 0.9694,
+    "f1_macro": 0.9687,
+    "training_time_sec": 2980.2,
+    "model_file_size_mb": 98.4
+  },
+  "MobileNetV2": {
+    "accuracy": 0.9648,
+    "precision_macro": 0.9592,
+    "recall_macro": 0.9615,
+    "f1_macro": 0.9603,
+    "training_time_sec": 1420.8,
+    "model_file_size_mb": 14.5
+  },
+  "InceptionV3": {
+    "accuracy": 0.9572,
+    "precision_macro": 0.9510,
+    "recall_macro": 0.9540,
+    "f1_macro": 0.9525,
+    "training_time_sec": 2315.6,
+    "model_file_size_mb": 92.1
+  },
+  "VGG16": {
+    "accuracy": 0.9405,
+    "precision_macro": 0.9348,
+    "recall_macro": 0.9372,
+    "f1_macro": 0.9360,
+    "training_time_sec": 4125.0,
+    "model_file_size_mb": 528.4
+  }
+}

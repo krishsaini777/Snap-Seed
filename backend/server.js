@@ -53,7 +53,8 @@ let isMongoConnected = false;
 
 const connectToMongoDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/crop_disease_db', {
+    const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URL || 'mongodb://localhost:27017/crop_disease_db';
+    await mongoose.connect(mongoUri, {
       // Mongoose 8 uses the new URL parser and unified topology by default
     });
     isMongoConnected = true;

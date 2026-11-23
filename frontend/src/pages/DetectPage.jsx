@@ -17,7 +17,7 @@ import styles from './DetectPage.module.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const API_URL = 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const DetectPage = () => {
   const [file, setFile] = useState(null);

@@ -4,7 +4,7 @@ import { FiClock, FiImage, FiAlertCircle, FiInbox } from 'react-icons/fi';
 import LoadingSpinner from '../components/LoadingSpinner';
 import styles from './HistoryPage.module.css';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const HistoryPage = () => {
   const [history, setHistory] = useState([]);

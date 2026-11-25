@@ -31,7 +31,7 @@ ChartJS.register(
   Legend
 );
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/+$/, '');
 
 const ModelComparePage = () => {
   const [models, setModels] = useState([]);
@@ -45,6 +45,7 @@ const ModelComparePage = () => {
   const fetchModels = async () => {
     try {
       setLoading(true);
+      const response = await axios.get(`${API_URL}/api/models`);
       const resData = response.data;
       let data = [];
       if (Array.isArray(resData)) {
@@ -194,9 +195,9 @@ const ModelComparePage = () => {
         min: Math.max(0, Math.min(
           ...models.flatMap((m) => [
             getVal(m.accuracy),
-            getVal(m.precision),
-            getVal(m.recall),
-            getVal(m.f1_score),
+            getVal(m.precision || m.precision_macro),
+            getVal(m.recall || m.recall_macro),
+            getVal(m.f1_score || m.f1_macro),
           ])
         ) - 5),
         max: 100,

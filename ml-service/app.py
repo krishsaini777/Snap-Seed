@@ -27,7 +27,7 @@ from PIL import Image
 # ---------------------------------------------------------------------------
 MODELS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
 IMG_SIZE = (224, 224)
-ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png"}
+ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "webp"}
 
 # ---------------------------------------------------------------------------
 # App initialisation

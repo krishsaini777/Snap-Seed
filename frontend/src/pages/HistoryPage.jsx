@@ -4,7 +4,7 @@ import { FiClock, FiImage, FiAlertCircle, FiInbox } from 'react-icons/fi';
 import LoadingSpinner from '../components/LoadingSpinner';
 import styles from './HistoryPage.module.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/+$/, '');
 
 const HistoryPage = () => {
   const [history, setHistory] = useState([]);
@@ -18,6 +18,7 @@ const HistoryPage = () => {
   const fetchHistory = async () => {
     try {
       setLoading(true);
+      const response = await axios.get(`${API_URL}/api/predict/history`);
       const resData = response.data;
       const data = Array.isArray(resData)
         ? resData
@@ -110,14 +111,14 @@ const HistoryPage = () => {
                     <span className={styles.cardIndex}>#{history.length - index}</span>
                     <span className={styles.cardDate}>
                       <FiClock size={14} />
-                      {formatDate(item.timestamp || item.date || item.created_at)}
+                      {formatDate(item.createdAt || item.timestamp || item.date || item.created_at)}
                     </span>
                   </div>
                   <div className={styles.cardBody}>
                     <div className={styles.cardLeft}>
                       <div className={styles.imageName}>
                         <FiImage size={16} />
-                        <span>{item.image_name || item.filename || 'Unknown file'}</span>
+                        <span>{item.originalName || item.imageName || item.image_name || item.filename || 'Unknown file'}</span>
                       </div>
                       <h3 className={styles.prediction}>
                         {(item.prediction || item.disease || 'Unknown')

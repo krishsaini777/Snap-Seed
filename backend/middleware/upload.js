@@ -33,13 +33,13 @@ const storage = multer.diskStorage({
 // ---------------------------------------------------------------------------
 
 const fileFilter = (_req, file, cb) => {
-  const allowedMimeTypes = ['image/jpeg', 'image/png'];
+  const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp'];
 
   if (allowedMimeTypes.includes(file.mimetype)) {
     cb(null, true); // Accept the file
   } else {
     cb(
-      new Error('Invalid file type. Only JPEG and PNG images are allowed.'),
+      new Error('Invalid file type. Only JPEG, PNG, and WebP images are allowed.'),
       false,
     );
   }

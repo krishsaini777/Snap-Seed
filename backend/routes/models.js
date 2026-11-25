@@ -12,7 +12,7 @@ const path = require('path');
 
 const router = express.Router();
 
-const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://localhost:8000';
+const ML_SERVICE_URL = (process.env.ML_SERVICE_URL || 'http://localhost:8000').replace(/\/+$/, '');
 const LOCAL_COMPARISON_PATH = path.join(__dirname, '..', '..', 'ml-service', 'models', 'model_comparison.json');
 
 // Default benchmark data for the 5 evaluated deep learning models

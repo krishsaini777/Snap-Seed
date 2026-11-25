@@ -18,7 +18,7 @@ const Prediction = require('../models/Prediction');
 const router = express.Router();
 
 // Base URL of the Python ML micro-service
-const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://localhost:8000';
+const ML_SERVICE_URL = (process.env.ML_SERVICE_URL || 'http://localhost:8000').replace(/\/+$/, '');
 
 // In-memory fallback history buffer for when MongoDB is unavailable
 const inMemoryHistory = [];
@@ -66,7 +66,7 @@ router.post('/', (req, res, next) => {
           },
           maxContentLength: Infinity,
           maxBodyLength: Infinity,
-          timeout: 30000,
+          timeout: 60000,
         });
         result = mlResponse.data;
       } catch (mlErr) {

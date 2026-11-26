@@ -110,7 +110,7 @@ def _load_resources():
         try:
             from tensorflow.keras.models import load_model
             print(f"[INFO] Loading model: {best_name} from {model_path} ...")
-            _model = load_model(model_path)
+            _model = load_model(model_path, compile=False)
             _loaded_model_name = best_name
             _is_demo_mode = False
             print("[INFO] Model loaded successfully.")

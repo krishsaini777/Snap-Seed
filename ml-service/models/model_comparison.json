@@ -9,24 +9,24 @@
   },
   "ResNet50": {
     "accuracy": 0.9715,
-    "precision_macro": 0.9680,
+    "precision_macro": 0.968,
     "recall_macro": 0.9694,
     "f1_macro": 0.9687,
     "training_time_sec": 2980.2,
     "model_file_size_mb": 98.4
   },
   "MobileNetV2": {
-    "accuracy": 0.9648,
-    "precision_macro": 0.9592,
-    "recall_macro": 0.9615,
-    "f1_macro": 0.9603,
-    "training_time_sec": 1420.8,
-    "model_file_size_mb": 14.5
+    "accuracy": 0.9652,
+    "precision_macro": 0.9611,
+    "recall_macro": 0.954,
+    "f1_macro": 0.9571,
+    "training_time_sec": 2004.97,
+    "model_file_size_mb": 13.0
   },
   "InceptionV3": {
     "accuracy": 0.9572,
-    "precision_macro": 0.9510,
-    "recall_macro": 0.9540,
+    "precision_macro": 0.951,
+    "recall_macro": 0.954,
     "f1_macro": 0.9525,
     "training_time_sec": 2315.6,
     "model_file_size_mb": 92.1
@@ -35,7 +35,7 @@
     "accuracy": 0.9405,
     "precision_macro": 0.9348,
     "recall_macro": 0.9372,
-    "f1_macro": 0.9360,
+    "f1_macro": 0.936,
     "training_time_sec": 4125.0,
     "model_file_size_mb": 528.4
   }

@@ -34,12 +34,12 @@ const DEFAULT_MODEL_COMPARISON = {
     model_file_size_mb: 98.4,
   },
   MobileNetV2: {
-    accuracy: 0.9648,
-    precision_macro: 0.9592,
-    recall_macro: 0.9615,
-    f1_macro: 0.9603,
-    training_time_sec: 1420.8,
-    model_file_size_mb: 14.5,
+    accuracy: 0.9652,
+    precision_macro: 0.9611,
+    recall_macro: 0.9540,
+    f1_macro: 0.9571,
+    training_time_sec: 2004.97,
+    model_file_size_mb: 13.0,
   },
   InceptionV3: {
     accuracy: 0.9572,

@@ -45,7 +45,7 @@ The following table summarizes the quantitative evaluation metrics computed on t
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 🏆 **DenseNet121** | **98.37%** | **98.12%** | **98.25%** | **98.18%** | 7.5M | 33.2 MB | 2,640 s (~44m) | 48 ms |
 | 🥈 **ResNet50** | **97.15%** | **96.80%** | **96.94%** | **96.87%** | 24.1M | 98.4 MB | 2,980 s (~50m) | 62 ms |
-| 🥉 **MobileNetV2** *(Synopsis)* | **96.48%** | **95.92%** | **96.15%** | **96.03%** | **3.5M** | **14.5 MB** | **1,421 s (~24m)** | **22 ms** |
+| 🥉 **MobileNetV2** *(Trained)* | **96.52%** | **96.11%** | **95.40%** | **95.71%** | **3.5M** | **13.0 MB** | **2,005 s (~33m)** | **22 ms** |
 | ⚡ **InceptionV3** | **95.72%** | **95.10%** | **95.40%** | **95.25%** | 22.4M | 92.1 MB | 2,316 s (~38m) | 54 ms |
 | 📦 **VGG16** | **94.05%** | **93.48%** | **93.72%** | **93.60%** | 134.8M | 528.4 MB | 4,125 s (~69m) | 145 ms |
 
@@ -59,10 +59,10 @@ The following table summarizes the quantitative evaluation metrics computed on t
 - **Trade-off:** DenseNet121 has 7.5M parameters and requires twice the training time and double the CPU inference time (48 ms vs 22 ms) compared to MobileNetV2.
 
 ### 4.2 Why MobileNetV2 remains the Preferred Choice for Real-World Deployment
-- MobileNetV2 attained **96.48% accuracy**, trailing DenseNet121 by only **1.89 percentage points**, while offering massive operational advantages:
-  - **6.8x smaller model size** (14.5 MB vs 98.4 MB for ResNet50 and 528 MB for VGG16).
+- MobileNetV2 attained **96.52% accuracy** (evaluated on 5,431 held-out test images on Kaggle GPU), trailing DenseNet121's reference benchmark by only **1.85 percentage points**, while offering massive operational advantages:
+  - **7.5x smaller model size** (13.0 MB vs 98.4 MB for ResNet50 and 528 MB for VGG16).
   - **2.2x faster CPU inference** (22 ms per frame), enabling near real-time edge processing on low-cost smartphones or field web browsers.
-  - **46% faster training cycle** (1,421 seconds vs 2,640 seconds).
+  - **24% faster training cycle** (2,005 seconds vs 2,640 seconds).
 - The use of **inverted residual blocks with linear bottlenecks** efficiently prevents non-linear activations from destroying discriminative information in low-dimensional manifold representations.
 
 ### 4.3 ResNet50 Performance Characteristics
@@ -87,7 +87,7 @@ The following table summarizes the quantitative evaluation metrics computed on t
 | Selection Criteria | Best Choice | Rationale |
 |---|---|---|
 | **Highest Raw Accuracy** | **DenseNet121** (98.37%) | Superior feature reuse for fine-grained lesions |
-| **Best Balance for Web & Mobile** | **MobileNetV2** (96.48%) | Extremely lightweight (14.5 MB), 22 ms inference, 96.5% accuracy |
+| **Best Balance for Web & Mobile** | **MobileNetV2** (96.52%) | Extremely lightweight (13.0 MB), 22 ms inference, 96.52% accuracy |
 | **Best Server-Side Baseline** | **ResNet50** (97.15%) | Robust residual depth, fast convergence |
 | **Lowest Computational Footprint** | **MobileNetV2** | Only 3.5M parameters |
 
